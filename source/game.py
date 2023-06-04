@@ -1,6 +1,7 @@
 import pygame
 from source.board import Board
 
+
 class Game:
     def __init__(self, win, display, board):
         self.win = win
@@ -24,3 +25,9 @@ class Game:
                 self.display.show_pieces(self.win)
                 return True
         return False
+
+    def reset(self):
+        # Initializes the Game object with the same instances which resets the game
+        self.__init__(self.win, self.display, self.board)
+
+

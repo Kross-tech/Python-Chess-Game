@@ -38,6 +38,19 @@ def main():
                 if not game.select(row, col):
                     game._move(row, col)
 
+            elif event.type == pygame.KEYDOWN:
+
+                # reset the game
+                if event.key == pygame.K_r:
+                    game.reset()
+                    board = Board()
+                    display = Display(board)
+                    game = Game(WINDOW, display, board)
+
+                # change the theme of the game
+                if event.key == pygame.K_t:
+                    display.change_theme()
+
             # quits the application
             elif event.type == pygame.QUIT:
                 pygame.quit()
